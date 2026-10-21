@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marina Bay | Ecosistema Quinta Lina & DFV</title>
+    <!-- Tailwind CSS CDN v4 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --arena: #E8E2D7;
+            --oceano: #24566A;
+            --turquesa: #78D9A5;
+            --oceano-oscuro: #1a3d4d;
+            --oceano-claro: #2f6b82;
+            --turquesa-claro: #94e2b8;
+            --turquesa-oscuro: #5cc48c;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--oceano-oscuro);
+            color: var(--arena);
+        }
+        .font-cinzel {
+            font-family: 'Cinzel', serif;
+        }
+        .font-cormorant {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        /* Glassmorphism con paleta costera */
+        .glass-box {
+            background: rgba(36, 86, 106, 0.45);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(120, 217, 165, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+        }
+        .glass-header {
+            background: rgba(26, 61, 77, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(120, 217, 165, 0.2);
+        }
+        .ocean-gradient-text {
+            background: linear-gradient(135deg, var(--arena) 0%, var(--turquesa) 50%, var(--turquesa-oscuro) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Estilos de botones */
+        .btn-kosmetria-dark {
+            background: rgba(36, 86, 106, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(120, 217, 165, 0.35);
+            transition: all 0.3s ease;
+        }
+        .btn-kosmetria-dark:hover {
+            background: rgba(47, 107, 130, 0.75);
+            border-color: rgba(120, 217, 165, 0.7);
+            transform: translateY(-2px);
+        }
+        .btn-kosmetria-accent {
+            background: linear-gradient(135deg, rgba(120, 217, 165, 0.35), rgba(36, 86, 106, 0.55));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(120, 217, 165, 0.6);
+            box-shadow: 0 4px 20px rgba(120, 217, 165, 0.25);
+            transition: all 0.3s ease;
+        }
+        .btn-kosmetria-accent:hover {
+            background: linear-gradient(135deg, rgba(120, 217, 165, 0.5), rgba(36, 86, 106, 0.7));
+            border-color: rgba(232, 226, 215, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(120, 217, 165, 0.35);
+        }
+        
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-float {
+            animation: floatSlow 4s ease-in-out infinite;
+        }
+        
+        /* Selección de texto */
+        ::selection {
+            background-color: var(--turquesa);
+            color: var(--oceano-oscuro);
+        }
+    </style>
+</head>
+<body class="relative min-h-screen overflow-x-hidden flex flex-col justify-between selection:bg-[#78D9A5] selection:text-[#1a3d4d]">
+    <!-- IMAGEN DE FONDO COSTERA DE ALTA CALIDAD -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80" alt="Playa Marina Bay Manta" class="w-full h-full object-cover object-center scale-105 transition-transform duration-1000 opacity-80">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#1a3d4d]/60 via-[#24566A]/40 to-[#1a3d4d]/80"></div>
+    </div>
+    <!-- HEADER -->
+    <header class="sticky top-0 z-40 w-full glass-header px-4 md:px-8 py-3.5 transition-all">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            
+            <!-- LOGO / MARCA -->
+            <a href="borrador.html" class="flex items-center gap-3 group">
+                <div class="w-9 h-9 rounded-full bg-[#78D9A5]/20 border border-[#78D9A5]/40 flex items-center justify-center text-[#78D9A5] text-sm group-hover:rotate-12 transition-transform">
+                    <i class="fas fa-water"></i>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="font-cinzel text-xl md:text-2xl font-bold tracking-[0.2em] text-[#E8E2D7] group-hover:text-[#78D9A5] transition">DFV</span>
+                    <span class="text-xs font-cinzel tracking-widest text-[#E8E2D7]/70 border-l border-[#78D9A5]/40 pl-2">COMPANY & CO.</span>
+                </div>
+            </a>
+            
+            <!-- BOTÓN RESERVA -->
+            <div class="flex items-center gap-3">
+                <a href="consultas.html" class="btn-kosmetria-accent text-[#E8E2D7] text-xs px-5 py-2.5 rounded-xl font-cinzel tracking-wider flex items-center gap-2">
+                    <i class="fas fa-calendar-check"></i> Reservar
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- HERO SECTION MARINA BAY -->
+    <section class="relative z-10 min-h-[45vh] flex flex-col items-center justify-center text-center px-4 py-12">
+        <span class="inline-block bg-[#24566A]/50 text-[#78D9A5] text-[10px] md:text-xs tracking-[0.3em] uppercase px-4 py-1.5 rounded-full mb-3 border border-[#78D9A5]/30 font-semibold backdrop-blur-sm">
+            ECOSISTEMA QUINTA LINA &bull; ALOJAMIENTO EN LA COSTA
+        </span>
+        <h1 class="font-cinzel text-4xl md:text-6xl font-bold tracking-[0.15em] text-[#E8E2D7] drop-shadow-2xl mb-2">
+            MARINA BAY <span class="ocean-gradient-text"></span>
+        </h1>
+        <div class="w-36 h-[1px] bg-gradient-to-r from-transparent via-[#78D9A5] to-transparent mx-auto my-3"></div>
+        <p class="max-w-xl text-[#E8E2D7]/90 text-xs md:text-sm font-light leading-relaxed drop-shadow">
+            Conecta la serenidad del campo andino con la brisa del Océano Pacífico. Ponemos a tu disposición una propiedad vacacional completa y exclusiva en el puerto atunero de Manta.
+        </p>
+        <!-- BOTONES AL MEDIO -->
+        <div class="flex flex-wrap items-center justify-center gap-4 mt-8">
+            <a href="borrador.html" class="btn-kosmetria-dark text-[#E8E2D7] font-cinzel text-xs md:text-sm px-8 py-3.5 rounded-xl tracking-widest flex items-center gap-2">
+                <i class="fas fa-home text-[#78D9A5]"></i> Inicio
+            </a>
+            <a href="recomendaciones.html" class="btn-kosmetria-accent text-[#E8E2D7] font-cinzel text-xs md:text-sm px-8 py-3.5 rounded-xl tracking-widest flex items-center gap-2">
+                <i class="fas fa-compass text-[#78D9A5]"></i> Recomendaciones
+            </a>
+        </div>
+    </section>
+    <!-- SECCIÓN PRINCIPAL MARINA BAY -->
+    <main class="relative z-10 max-w-6xl mx-auto px-4 py-6 flex flex-col gap-12">
+        
+        <!-- FICHA PRINCIPAL DE LA PROPIEDAD -->
+        <section class="glass-box p-6 md:p-10 rounded-2xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                
+                <!-- Imagen de la propiedad -->
+                <div class="relative rounded-xl overflow-hidden border border-[#78D9A5]/30 group min-h-[350px] shadow-2xl">
+                    <img src="manta.jpeg" alt="Propiedad Marina Bay - Manta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#1a3d4d]/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-center">
+                        <span class="font-cinzel text-lg font-bold tracking-widest text-[#E8E2D7]">MANTA &bull; ECUADOR</span>
+                        <p class="text-[10px] text-[#78D9A5]/90 uppercase tracking-widest mt-1"><i class="fas fa-map-marker-alt text-[#78D9A5] mr-1"></i> Zona Exclusiva Frente al Mar</p>
+                    </div>
+                </div>
+                <!-- Detalles e información de la casa -->
+                <div class="text-left flex flex-col justify-between h-full">
+                    <div>
+                        <span class="text-[#78D9A5] text-[10px] md:text-xs tracking-[0.25em] font-semibold uppercase">PROPIEDAD PRIVADA VACACIONAL</span>
+                        <h2 class="font-cinzel text-3xl font-bold text-[#E8E2D7] mt-1 mb-3">
+                            Casa Completa en <em class="font-cormorant ocean-gradient-text">Marina Bay</em>
+                        </h2>
+                        <p class="text-[#E8E2D7]/85 text-xs md:text-sm font-light leading-relaxed mb-6">
+                            Disfruta del atardecer del Pacífico en una casa totalmente amoblada, equipada con tecnología y seguridad, ideal para viajes familiares, escapadas de descanso o estadías corporativas frente a la playa.
+                        </p>
+                        <!-- Grilla de detalles -->
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="bg-[#1a3d4d]/50 backdrop-blur-md p-3 rounded-lg border border-[#78D9A5]/25 flex items-center gap-2 text-xs text-[#E8E2D7]">
+                                <i class="fas fa-users text-[#78D9A5] text-base"></i> Capacidad ideal familias/grupos
+                            </div>
+                            <div class="bg-[#1a3d4d]/50 backdrop-blur-md p-3 rounded-lg border border-[#78D9A5]/25 flex items-center gap-2 text-xs text-[#E8E2D7]">
+                                <i class="fas fa-door-open text-[#78D9A5] text-base"></i> Múltiples Habitaciones
+                            </div>
+                            <div class="bg-[#1a3d4d]/50 backdrop-blur-md p-3 rounded-lg border border-[#78D9A5]/25 flex items-center gap-2 text-xs text-[#E8E2D7]">
+                                <i class="fas fa-sun text-[#78D9A5] text-base"></i> Aire Acondicionado
+                            </div>
+                            <div class="bg-[#1a3d4d]/50 backdrop-blur-md p-3 rounded-lg border border-[#78D9A5]/25 flex items-center gap-2 text-xs text-[#E8E2D7]">
+                                <i class="fas fa-shield-alt text-[#78D9A5] text-base"></i> Seguridad 24/7
+                            </div>
+                        </div>
+                        <!-- Amenidades -->
+                        <div class="mb-6">
+                            <h4 class="font-cinzel text-sm font-bold text-[#78D9A5] uppercase tracking-wider mb-3">Amenidades Destacadas:</h4>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#E8E2D7]/90 font-light">
+                                <li class="flex items-center gap-2"><i class="fas fa-wifi text-[#78D9A5]"></i> Wi-Fi de alta velocidad</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-swimming-pool text-[#78D9A5]"></i> Piscina & Zona de Relax</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-umbrella-beach text-[#78D9A5]"></i> Acceso rápido a las playas</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-parking text-[#78D9A5]"></i> Estacionamiento privado reservado</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Botones de Acción -->
+                    <div class="flex flex-col sm:flex-row gap-3 mt-2">
+                        <a href="consultas.html" class="btn-kosmetria-accent text-[#E8E2D7] font-cinzel text-xs px-6 py-3.5 rounded-xl text-center flex items-center justify-center gap-2">
+                            <i class="fab fa-airbnb text-base"></i> Reservar en Airbnb
+                        </a>
+                        <a href="https://wa.me/593983842601" class="btn-kosmetria-dark text-[#78D9A5] font-cinzel text-xs px-6 py-3.5 rounded-xl text-center flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-[#78D9A5] text-base"></i> Consulta Directa WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- PREGUNTAS FRECUENTES (FAQ) -->
+        <section class="glass-box p-6 md:p-10 rounded-2xl">
+            <span class="text-[#78D9A5] text-[10px] md:text-xs tracking-[0.25em] font-semibold uppercase block text-center mb-1">INFORMACIÓN DE ESTADÍA</span>
+            <h2 class="font-cinzel text-2xl md:text-3xl font-bold text-[#E8E2D7] text-center mb-6">Preguntas Frecuentes</h2>
+            <div class="space-y-4 max-w-3xl mx-auto text-xs md:text-sm">
+                <div class="bg-[#1a3d4d]/50 backdrop-blur-md p-4 rounded-xl border border-[#78D9A5]/20">
+                    <h4 class="font-bold text-[#78D9A5] mb-1"><i class="fas fa-question-circle text-[#78D9A5] mr-2"></i>¿Cómo coordino mi reserva combinada (Andes + Costa)?</h4>
+                    <p class="text-[#E8E2D7]/85 font-light leading-relaxed">Puedes solicitar un paquete de vacaciones integrado que combine noches en Quinta Lina (Ambato) y días de descanso en Marina Bay (Manta) comunicándote directamente con nuestro Concierge.</p>
+                </div>
+                <div class="bg-[#1a3d4d]/50 backdrop-blur-md p-4 rounded-xl border border-[#78D9A5]/20">
+                    <h4 class="font-bold text-[#78D9A5] mb-1"><i class="fas fa-question-circle text-[#78D9A5] mr-2"></i>¿Se alquila la propiedad completa o por habitaciones?</h4>
+                    <p class="text-[#E8E2D7]/85 font-light leading-relaxed">Marina Bay se alquila como propiedad completa para garantizar total privacidad, exclusividad y tranquilidad durante tu estadía.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- FOOTER COMPLETO TRANSPARENTE -->
+    <footer class="relative z-10 w-full max-w-6xl mx-auto p-4 md:p-6 pb-8 mt-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-left glass-box p-8 rounded-2xl">
+            
+            <!-- Columna 1: Navegación -->
+            <div>
+                <h3 class="font-cinzel text-sm font-bold text-[#78D9A5] mb-4 uppercase tracking-wider">Navegación</h3>
+                <ul class="space-y-2 text-xs text-[#E8E2D7]/85 font-light">
+                    <li><a href="borrador.html" class="hover:text-[#78D9A5] transition">Inicio</a></li>
+                    <li><a href="marinabay.html" class="hover:text-[#78D9A5] transition">Marina Bay Manta</a></li>
+                    <li><a href="consultas.html" class="hover:text-[#78D9A5] transition">Reservas</a></li>
+                    <li><a href="contactenos.html" class="hover:text-[#78D9A5] transition">Contacto</a></li>
+                </ul>
+            </div>
+            <!-- Columna 2: Ubicación & Contacto -->
+            <div>
+                <h3 class="font-cinzel text-sm font-bold text-[#78D9A5] mb-4 uppercase tracking-wider">Ubicación & Contacto</h3>
+                <ul class="space-y-3 text-xs text-[#E8E2D7]/85 font-light">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-map-marker-alt text-[#78D9A5] mt-0.5"></i>
+                        <span>Manta — Ecuador</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-envelope text-[#78D9A5]"></i>
+                        <span>reservas@quintalina.com</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-phone text-[#78D9A5]"></i>
+                        <span>+593 (03) 299 9999</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- Columna 3: Síguenos -->
+            <div>
+                <h3 class="font-cinzel text-sm font-bold text-[#78D9A5] mb-4 uppercase tracking-wider">Síguenos</h3>
+                <div class="flex flex-wrap gap-3">
+                    <a href="#" class="w-9 h-9 rounded-full bg-[#78D9A5]/15 border border-[#78D9A5]/35 flex items-center justify-center text-[#78D9A5] hover:bg-[#78D9A5]/30 transition backdrop-blur-sm"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-9 h-9 rounded-full bg-[#78D9A5]/15 border border-[#78D9A5]/35 flex items-center justify-center text-[#78D9A5] hover:bg-[#78D9A5]/30 transition backdrop-blur-sm"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-9 h-9 rounded-full bg-[#78D9A5]/15 border border-[#78D9A5]/35 flex items-center justify-center text-[#78D9A5] hover:bg-[#78D9A5]/30 transition backdrop-blur-sm"><i class="fab fa-airbnb"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- COPYRIGHT -->
+        <div class="pt-4 border-t border-[#78D9A5]/20 flex flex-col md:flex-row justify-between items-center text-[11px] text-[#E8E2D7]/70 gap-3 text-center md:text-left">
+            <p>&copy; 2026 DFV Company & Co &bull; Marina Bay. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <!-- WIDGET CHAT FLOTANTE -->
+    <div class="fixed bottom-6 right-6 z-30 flex flex-col items-end">
+        <div id="chatBox" class="hidden glass-box w-80 rounded-2xl mb-3 overflow-hidden flex flex-col shadow-2xl">
+            <div class="bg-[#1a3d4d]/70 backdrop-blur-md px-4 py-3 border-b border-[#78D9A5]/25 flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-full bg-[#78D9A5]/20 border border-[#78D9A5]/40 flex items-center justify-center text-[#78D9A5] text-xs">
+                        <i class="fas fa-user-astronaut"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold text-[#E8E2D7] font-cinzel">Dandy - Concierge DFV</p>
+                        <p class="text-[9px] text-[#78D9A5] flex items-center gap-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#78D9A5] animate-pulse"></span> En línea para ayudarte
+                        </p>
+                    </div>
+                </div>
+                <button onclick="toggleChat()" class="text-[#E8E2D7]/70 hover:text-[#E8E2D7]"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="chatMessages" class="p-3 h-56 overflow-y-auto text-xs space-y-3 flex flex-col bg-[#24566A]/25">
+                <div class="bg-[#1a3d4d]/60 p-2.5 rounded-xl rounded-tl-none border border-[#78D9A5]/15 text-[#E8E2D7]/90 self-start max-w-[85%] backdrop-blur-sm">
+                    ¡Hola! Soy Dandy. ¿Quieres consultar sobre la disponibilidad de Marina Bay en Manta?
+                </div>
+            </div>
+            <div class="px-2 py-1.5 bg-[#1a3d4d]/50 backdrop-blur-sm flex gap-1 overflow-x-auto text-[10px] border-t border-[#78D9A5]/15">
+                <a href="consultas.html" class="bg-[#78D9A5]/15 hover:bg-[#78D9A5]/30 text-[#78D9A5] px-2 py-1 rounded border border-[#78D9A5]/30 whitespace-nowrap">📅 Reservar Marina Bay</a>
+                <a href="contactenos.html" class="bg-[#78D9A5]/15 hover:bg-[#78D9A5]/30 text-[#78D9A5] px-2 py-1 rounded border border-[#78D9A5]/30 whitespace-nowrap">💬 Contacto Directo</a>
+            </div>
+            <div class="p-2.5 bg-[#1a3d4d]/60 backdrop-blur-md border-t border-[#78D9A5]/25 flex gap-2">
+                <input type="text" id="userInput" placeholder="Escribe tu consulta..." class="w-full bg-[#24566A]/40 border border-[#78D9A5]/20 rounded-lg px-3 py-1.5 text-xs text-[#E8E2D7] placeholder-[#E8E2D7]/50 focus:outline-none focus:border-[#78D9A5]" onkeypress="handleKey(event)">
+                <button onclick="sendMessage()" class="bg-[#78D9A5] hover:bg-[#94e2b8] text-[#1a3d4d] px-3 py-1.5 rounded-lg text-xs font-bold transition">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+        <button onclick="toggleChat()" class="btn-kosmetria-accent px-5 py-3 rounded-full flex items-center gap-2 shadow-2xl hover:scale-105 transition-transform font-bold text-xs uppercase tracking-wider animate-float text-[#E8E2D7]">
+            <span class="text-lg">🤖</span>
+            <span class="hidden md:inline font-cinzel">ASISTENTE DFV &bull; ¿Necesitas ayuda?</span>
+        </button>
+    </div>
+    <!-- SCRIPTS INTERACTIVOS -->
+    <script>
+        function toggleChat() {
+            document.getElementById('chatBox').classList.toggle('hidden');
+        }
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const text = input.value.trim();
+            if(!text) return;
+            
+            appendMessage(text, 'user');
+            input.value = '';
+            setTimeout(() => {
+                respondDandy(text);
+            }, 600);
+        }
+        function handleKey(e) {
+            if(e.key === 'Enter') sendMessage();
+        }
+        function appendMessage(text, sender) {
+            const container = document.getElementById('chatMessages');
+            const div = document.createElement('div');
+            
+            if(sender === 'user') {
+                div.className = "bg-[#78D9A5]/25 text-[#E8E2D7] p-2.5 rounded-xl rounded-tr-none border border-[#78D9A5]/40 self-end max-w-[85%] text-right backdrop-blur-sm";
+            } else {
+                div.className = "bg-[#1a3d4d]/60 text-[#E8E2D7]/90 p-2.5 rounded-xl rounded-tl-none border border-[#78D9A5]/15 self-start max-w-[85%] backdrop-blur-sm";
+            }
+            div.innerText = text;
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }
+        function respondDandy(query) {
+            const q = query.toLowerCase();
+            let reply = "Marina Bay es nuestra propiedad ubicada en Manta. Puedes coordinar tu estadía directamente en la sección de Reservas.";
+            
+            if(q.includes('manta') || q.includes('playa') || q.includes('marina')) {
+                reply = "Marina Bay está en una zona exclusiva de Manta, ideal para vacaciones en familia frente al mar.";
+            } else if(q.includes('reserva') || q.includes('airbnb')) {
+                reply = "Puedes reservar Marina Bay por Airbnb o comunicándote con nosotros desde la página de Reservas.";
+            }
+            
+            appendMessage(reply, 'bot');
+        }
+    </script>
+</body>
+</html>

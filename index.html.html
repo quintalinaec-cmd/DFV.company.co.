@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DFV Company & Co. | Vive Ecuador</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F3EFE6; /* Marfil */
+            color: #303A32; /* Bosque */
+        }
+        .font-cinzel {
+            font-family: 'Cinzel', serif;
+        }
+        .glass-box {
+            background: rgba(48, 58, 50, 0.45); /* Bosque con transparencia */
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(182, 165, 138, 0.4); /* Arena con transparencia para los bordes */
+            box-shadow: 0 20px 40px rgba(48, 58, 50, 0.25);
+        }
+        .glass-nav {
+            background: rgba(48, 58, 50, 0.75); /* Bosque más denso para la navegación */
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(182, 165, 138, 0.4); /* Arena */
+        }
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-float {
+            animation: floatSlow 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen text-[#F3EFE6] overflow-x-hidden bg-[#303A32] flex flex-col justify-between">
+
+    <!-- IMAGEN DE FONDO -->
+    <div class="fixed inset-0 z-0">
+        <img src="fondo.jpg" alt="Fondo DFV Company & Co." class="w-full h-full object-cover object-center brightness-90 contrast-100">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#303A32]/60 via-[#303A32]/40 to-[#303A32]/70"></div>
+    </div>
+
+    <!-- NAVEGACIÓN PRINCIPAL / NAVBAR -->
+    <nav class="sticky top-0 z-40 w-full glass-nav px-4 md:px-8 py-3.5 transition-all">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- LOGO DFV -->
+            <a href="presentacion.html" class="flex items-center gap-2 group">
+                <span class="font-cinzel text-xl md:text-2xl font-bold tracking-[0.2em] text-[#F3EFE6] group-hover:text-[#B6A58A] transition">DFV</span>
+                <span class="text-xs font-cinzel tracking-widest text-[#B6A58A] border-l border-[#B6A58A]/50 pl-2">COMPANY & CO.</span>
+            </a>
+
+            <!-- MENÚ ESCRITORIO -->
+            <ul class="hidden xl:flex items-center gap-5 text-[11px] font-medium tracking-widest uppercase text-[#F3EFE6]">
+                <li><a href="borrador.html" class="hover:text-[#B6A58A] transition-colors drop-shadow">Inicio</a></li>
+                <li><a href="presentacion.html" class="hover:text-[#B6A58A] transition-colors drop-shadow">Quinta Lina</a></li>
+                <li><a href="marinabay.html" class="hover:text-[#B6A58A] transition-colors drop-shadow">Marina Bay</a></li>
+                <li><a href="servicios.html" class="hover:text-[#B6A58A] transition-colors drop-shadow">KOSMETRIA</a></li>
+                <li><a href="consultas.html" class="hover:text-[#B6A58A] transition-colors drop-shadow">Travel Ecuador</a></li>
+                <li><a href="contactenos.html" class="hover:text-[#B6A58A] transition-colors drop-shadow">Contacto</a></li>
+            </ul>
+
+            <!-- BOTÓN WEB OFICIAL -->
+            <div class="hidden md:flex items-center gap-3">
+                <a href="https://www.dfvco.com" target="_blank" class="bg-[#B6A58A]/25 hover:bg-[#B6A58A]/40 text-[#F3EFE6] border border-[#B6A58A]/60 text-xs px-4 py-2 rounded-full transition font-semibold tracking-wider backdrop-blur-sm">
+                    <i class="fas fa-globe mr-1"></i> www.dfvco.com
+                </a>
+            </div>
+
+            <!-- BOTÓN MENÚ MÓVIL -->
+            <button onclick="toggleMobileMenu()" class="xl:hidden text-[#B6A58A] text-xl focus:outline-none p-1">
+                <i class="fas fa-bars" id="menuIcon"></i>
+            </button>
+        </div>
+
+        <!-- DESPLEGABLE MÓVIL -->
+        <div id="mobileMenu" class="hidden xl:hidden mt-3 pt-3 border-t border-[#B6A58A]/30 flex flex-col gap-2.5 text-xs tracking-wider uppercase text-[#F3EFE6]">
+            <a href="presentacion.html" class="hover:text-[#B6A58A] py-1">Inicio</a>
+            <a href="presentacion.html" class="hover:text-[#B6A58A] py-1">Quinta Lina</a>
+            <a href="marinabay.html" class="hover:text-[#B6A58A] py-1">Marina Bay</a>
+            <a href="servicios.html" class="hover:text-[#B6A58A] py-1">KOSMETRIA</a>
+            <a href="consultas.html" class="hover:text-[#B6A58A] py-1">Travel Ecuador</a>
+            <a href="contactenos.html" class="hover:text-[#B6A58A] py-1">Contacto</a>
+            <a href="https://www.dfvco.com" target="_blank" class="text-[#B6A58A] font-bold py-1 border-t border-[#B6A58A]/30 mt-1"><i class="fas fa-globe mr-1"></i> Ir a dfvco.com</a>
+        </div>
+    </nav>
+
+    <!-- HEADER / MARCA Y SLOGAN -->
+    <header id="inicio" class="relative z-10 text-center pt-8 md:pt-10 px-4">
+        <div class="flex items-center justify-center gap-3 mb-1">
+            <h1 class="font-cinzel text-4xl md:text-6xl tracking-[0.2em] font-bold text-[#F3EFE6] drop-shadow-2xl">
+                DFV
+            </h1>
+            <div class="text-[#B6A58A] text-2xl md:text-3xl flex items-center gap-1 drop-shadow-lg">
+                <i class="fas fa-mountain"></i>
+                <i class="fas fa-sun"></i>
+            </div>
+        </div>
+        
+        <p class="font-cinzel text-xl md:text-2xl tracking-[0.3em] text-[#B6A58A] uppercase font-semibold mb-3 drop-shadow-lg">
+            Company & Co.
+        </p>
+
+        <div class="w-48 h-[1px] bg-gradient-to-r from-transparent via-[#B6A58A] to-transparent mx-auto mb-3"></div>
+
+        <p class="text-xs md:text-sm tracking-[0.2em] text-[#F3EFE6] uppercase font-medium drop-shadow-lg mb-1">
+            Vive Ecuador. Vive la experiencia.
+        </p>
+        <p class="text-[11px] md:text-xs tracking-[0.2em] text-[#B6A58A] uppercase font-light drop-shadow-lg">
+            Descubre &bull; Conecta &bull; Vive
+        </p>
+    </header>
+
+    <!-- CONTENIDO CENTRAL -->
+    <main class="relative z-10 my-auto px-4 py-8 flex flex-col items-center gap-8">
+        
+        <!-- BLOQUE PRINCIPAL -->
+        <div class="glass-box max-w-2xl w-full p-6 md:p-10 rounded-2xl text-center">
+            <span class="inline-block bg-[#B6A58A]/30 text-[#F3EFE6] text-[10px] md:text-xs tracking-widest uppercase px-4 py-1.5 rounded-full mb-4 border border-[#B6A58A]/50 font-semibold backdrop-blur-sm">
+                EXPERIENCIAS MEMORABLES
+            </span>
+
+            <h2 class="font-cinzel text-2xl md:text-4xl font-bold text-[#F3EFE6] mb-4 drop-shadow-md">
+                Viajar, Descubrir y Conectar
+            </h2>
+            <p class="text-[#F3EFE6] text-xs md:text-sm leading-relaxed mb-6 font-light max-w-xl mx-auto drop-shadow">
+                Creamos experiencias memorables para viajar, descubrir y conectar con lo esencial. Hospedaje, naturaleza, bienestar, gastronomía y eventos se encuentran en espacios cuidadosamente creados para disfrutar cada destino con calma, autenticidad y una mirada diferente.
+            </p>
+            <div class="flex justify-center gap-4 flex-wrap">
+                <a href="servicios.html" class="bg-gradient-to-r from-[#B6A58A] to-[#8c7b60] text-[#303A32] font-bold text-xs md:text-sm px-6 py-3 rounded-lg shadow-xl hover:opacity-95 transition">
+                    <i class="fas fa-concierge-bell mr-1"></i> Explorar Servicios
+                </a>
+                <button onclick="toggleChat()" class="bg-[#303A32]/60 hover:bg-[#303A32]/80 text-[#B6A58A] border border-[#B6A58A]/50 text-xs md:text-sm px-6 py-3 rounded-lg transition font-medium backdrop-blur-sm">
+                    <i class="fas fa-robot mr-1"></i> Hablar con Dandy
+                </button>
+            </div>
+        </div>
+
+        <!-- SECCIÓN DE IDENTIDAD CORPORATIVA -->
+        <section id="empresa" class="glass-box max-w-4xl w-full p-6 md:p-10 rounded-2xl my-4 text-center">
+            <span class="inline-block bg-[#B6A58A]/30 text-[#F3EFE6] text-[10px] md:text-xs tracking-widest uppercase px-4 py-1.5 rounded-full mb-3 border border-[#B6A58A]/50 font-semibold backdrop-blur-sm">
+                NUESTRA IDENTIDAD CORPORATIVA
+            </span>
+
+            <h3 class="font-cinzel text-2xl md:text-3xl font-bold text-[#F3EFE6] mb-2 drop-shadow-md">DFV Company & Co.</h3>
+            <p class="text-xs text-[#B6A58A] uppercase tracking-[0.2em] mb-8 font-light drop-shadow">
+                Hospitalidad &bull; Bienestar &bull; Estilo de Vida &bull; Turismo Premium
+            </p>
+
+            <div class="bg-[#303A32]/40 backdrop-blur-sm p-5 rounded-xl border border-[#B6A58A]/30 mb-8 max-w-2xl mx-auto">
+                <i class="fas fa-compass text-[#B6A58A] text-2xl mb-2 drop-shadow"></i>
+                <h4 class="font-cinzel text-sm font-bold text-[#B6A58A] tracking-wider uppercase mb-1">Nuestro Propósito</h4>
+                <p class="text-xs md:text-sm text-[#F3EFE6] italic font-light drop-shadow-sm">
+                    "Inspirar a las personas a vivir con calma, descubrir nuevos horizontes y conectar con lo esencial."
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left mb-8">
+                <div class="glass-box p-6 rounded-xl bg-[#303A32]/30">
+                    <div class="items-center gap-3 mb-3 text-[#B6A58A] flex">
+                        <span class="w-8 h-8 rounded-full bg-[#B6A58A]/30 border border-[#B6A58A]/50 flex items-center justify-center text-sm"><i class="fas fa-bullseye"></i></span>
+                        <h4 class="font-cinzel font-bold text-base text-[#F3EFE6] drop-shadow">Nuestra Misión</h4>
+                    </div>
+                    <p class="text-xs md:text-sm text-[#F3EFE6] leading-relaxed font-light drop-shadow-sm">
+                        Crear experiencias memorables y espacios de vida excepcionales que conecten a nuestros huéspedes y clientes con la esencia del bienestar, la naturaleza, la gastronomía y el descubrimiento.
+                    </p>
+                </div>
+                <div class="glass-box p-6 rounded-xl bg-[#303A32]/30">
+                    <div class="items-center gap-3 mb-3 text-[#B6A58A] flex">
+                        <span class="w-8 h-8 rounded-full bg-[#B6A58A]/30 border border-[#B6A58A]/50 flex items-center justify-center text-sm"><i class="fas fa-eye"></i></span>
+                        <h4 class="font-cinzel font-bold text-base text-[#F3EFE6] drop-shadow">Nuestra Visión</h4>
+                    </div>
+                    <p class="text-xs md:text-sm text-[#F3EFE6] leading-relaxed font-light drop-shadow-sm">
+                        Ser el grupo empresarial referente en Latinoamérica en hospitalidad de lujo, turismo de experiencias y bienestar integral, destacándonos por la excelencia y la autenticidad local.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- TARJETAS INFERIORES CON ENLACES DIRECTOS -->
+    <footer class="relative z-10 w-full max-w-6xl mx-auto p-4 md:p-6 pb-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            
+            <!-- Tarjeta 1: Quinta Lina -->
+            <a href="presentacion.html" class="glass-box p-5 rounded-xl block hover:bg-[#303A32]/60 transition-all duration-300 hover:scale-105 group text-center border-t-2 border-t-[#B6A58A]">
+                <div class="w-10 h-10 mx-auto rounded-full bg-[#B6A58A]/30 border border-[#B6A58A]/50 flex items-center justify-center text-[#B6A58A] text-lg mb-3 group-hover:rotate-12 transition-transform">
+                    <i class="fas fa-mountain"></i>
+                </div>
+                <h3 class="font-cinzel text-sm md:text-base font-bold tracking-wider text-[#F3EFE6] drop-shadow-sm">QUINTA LINA</h3>
+                <p class="text-[10px] md:text-xs text-[#B6A58A] tracking-widest uppercase mt-1">SERENIDAD ANDINA &bull; BIENESTAR</p>
+            </a>
+
+            <!-- Tarjeta 2: Marina Bay -->
+            <a href="marinabay.html" class="glass-box p-5 rounded-xl block hover:bg-[#303A32]/60 transition-all duration-300 hover:scale-105 group text-center border-t-2 border-t-[#B6A58A]">
+                <div class="w-10 h-10 mx-auto rounded-full bg-[#B6A58A]/30 border border-[#B6A58A]/50 flex items-center justify-center text-[#B6A58A] text-lg mb-3 group-hover:rotate-12 transition-transform">
+                    <i class="fas fa-water"></i>
+                </div>
+                <h3 class="font-cinzel text-sm md:text-base font-bold tracking-wider text-[#F3EFE6] drop-shadow-sm">MARINA BAY</h3>
+                <p class="text-[10px] md:text-xs text-[#B6A58A] tracking-widest uppercase mt-1">COSTA &bull; BRISA &bull; ATARDECERES</p>
+            </a>
+
+            <!-- Tarjeta 3: Kosmetria / Servicios -->
+            <a href="servicios.html" class="glass-box p-5 rounded-xl block hover:bg-[#303A32]/60 transition-all duration-300 hover:scale-105 group text-center border-t-2 border-t-[#B6A58A]">
+                <div class="w-10 h-10 mx-auto rounded-full bg-[#B6A58A]/30 border border-[#B6A58A]/50 flex items-center justify-center text-[#B6A58A] text-lg mb-3 group-hover:rotate-12 transition-transform">
+                    <i class="fas fa-spa"></i>
+                </div>
+                <h3 class="font-cinzel text-sm md:text-base font-bold tracking-wider text-[#F3EFE6] drop-shadow-sm">KOSMETRIA</h3>
+                <p class="text-[10px] md:text-xs text-[#B6A58A] tracking-widest uppercase mt-1">BELLEZA &bull; SALUD &bull; EQUILIBRIO</p>
+            </a>
+
+            <!-- Tarjeta 4: Travel Ecuador -->
+            <a href="travel.html" class="glass-box p-5 rounded-xl block hover:bg-[#303A32]/60 transition-all duration-300 hover:scale-105 group text-center border-t-2 border-t-[#B6A58A]">
+                <div class="w-10 h-10 mx-auto rounded-full bg-[#B6A58A]/30 border border-[#B6A58A]/50 flex items-center justify-center text-[#B6A58A] text-lg mb-3 group-hover:rotate-12 transition-transform">
+                    <i class="fas fa-plane-departure"></i>
+                </div>
+                <h3 class="font-cinzel text-sm md:text-base font-bold tracking-wider text-[#F3EFE6] drop-shadow-sm">TRAVEL ECUADOR</h3>
+                <p class="text-[10px] md:text-xs text-[#B6A58A] tracking-widest uppercase mt-1">MASQUEVUELOS &bull; MUNDO</p>
+            </a>
+
+        </div>
+
+        <!-- PIE DE PÁGINA -->
+        <div class="mt-8 pt-4 border-t border-[#B6A58A]/30 flex flex-col md:flex-row justify-between items-center text-[11px] text-[#F3EFE6] gap-3 drop-shadow">
+            <p>&copy; 2026 DFV Company & Co. Todos los derechos reservados. | <a href="https://www.dfvco.com" target="_blank" class="text-[#B6A58A] hover:underline">www.dfvco.com</a></p>
+            <div class="flex gap-4">
+                <a href="contactenos.html" class="hover:text-[#B6A58A] transition">Contacto VIP</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WIDGET DE CHAT FLOTANTE -->
+    <div class="fixed bottom-6 right-6 z-30 flex flex-col items-end">
+        <div id="chatBox" class="hidden glass-box w-80 rounded-2xl mb-3 overflow-hidden border border-[#B6A58A]/50 flex flex-col shadow-2xl bg-[#303A32]/90">
+            <div class="bg-[#303A32]/80 px-4 py-3 border-b border-[#B6A58A]/30 flex justify-between items-center backdrop-blur-md">
+                <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-full bg-[#B6A58A]/30 border border-[#B6A58A]/50 flex items-center justify-center text-[#B6A58A] text-xs">
+                        <i class="fas fa-user-astronaut"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold text-[#F3EFE6] font-cinzel">Dandy - Concierge DFV</p>
+                        <p class="text-[9px] text-emerald-400 flex items-center gap-1 font-semibold">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> En línea para atenderte
+                        </p>
+                    </div>
+                </div>
+                <button onclick="toggleChat()" class="text-[#F3EFE6] hover:text-[#B6A58A]"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div id="chatMessages" class="p-3 h-56 overflow-y-auto text-xs space-y-3 flex flex-col bg-[#303A32]/50 backdrop-blur-sm">
+                <div class="bg-[#303A32]/80 p-2.5 rounded-xl rounded-tl-none border border-[#B6A58A]/30 text-[#F3EFE6] self-start max-w-[85%] drop-shadow-sm">
+                    ¡Bienvenido a DFV! Soy Dandy. ¿Qué destino o servicio te gustaría explorar hoy?
+                </div>
+            </div>
+
+            <!-- Accesos rápidos -->
+            <div class="px-2 py-1.5 bg-[#303A32]/70 backdrop-blur-md flex gap-1 overflow-x-auto text-[10px] border-t border-[#B6A58A]/20">
+                <a href="presentacion.html" class="bg-[#B6A58A]/25 hover:bg-[#B6A58A]/45 text-[#F3EFE6] px-2 py-1 rounded border border-[#B6A58A]/40 whitespace-nowrap">⛰️ Quinta Lina</a>
+                <a href="marinabay.html" class="bg-[#B6A58A]/25 hover:bg-[#B6A58A]/45 text-[#F3EFE6] px-2 py-1 rounded border border-[#B6A58A]/40 whitespace-nowrap">🌊 Marina Bay</a>
+                <a href="servicios.html" class="bg-[#B6A58A]/25 hover:bg-[#B6A58A]/45 text-[#F3EFE6] px-2 py-1 rounded border border-[#B6A58A]/40 whitespace-nowrap">✨ Kosmetria</a>
+                <a href="travel.html" class="bg-[#B6A58A]/25 hover:bg-[#B6A58A]/45 text-[#F3EFE6] px-2 py-1 rounded border border-[#B6A58A]/40 whitespace-nowrap">✈️ Travel</a>
+            </div>
+
+            <div class="p-2.5 bg-[#303A32]/90 backdrop-blur-md border-t border-[#B6A58A]/30 flex gap-2">
+                <input type="text" id="userInput" placeholder="Escribe tu consulta..." class="w-full bg-[#303A32]/60 border border-[#B6A58A]/30 rounded-lg px-3 py-1.5 text-xs text-[#F3EFE6] placeholder-[#F3EFE6]/60 focus:outline-none focus:border-[#B6A58A]" onkeypress="handleKey(event)">
+                <button onclick="sendMessage()" class="bg-[#B6A58A] hover:bg-[#8c7b60] text-[#303A32] px-3 py-1.5 rounded-lg text-xs font-bold transition">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+
+        <button onclick="toggleChat()" class="bg-gradient-to-tr from-[#B6A58A] to-[#d4c5a9] text-[#303A32] px-4 py-3 rounded-full flex items-center gap-2 shadow-2xl hover:scale-105 transition-transform font-bold text-xs uppercase tracking-wider border-2 border-[#F3EFE6] animate-float">
+            <span class="text-lg">🤖</span>
+            <span class="hidden md:inline">ASISTENTE DFV &bull; ¿Necesitas ayuda?</span>
+        </button>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        function toggleChat() {
+            document.getElementById('chatBox').classList.toggle('hidden');
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const text = input.value.trim();
+            if(!text) return;
+            
+            appendMessage(text, 'user');
+            input.value = '';
+
+            setTimeout(() => {
+                respondDandy(text);
+            }, 600);
+        }
+
+        function handleKey(e) {
+            if(e.key === 'Enter') sendMessage();
+        }
+
+        function appendMessage(text, sender) {
+            const container = document.getElementById('chatMessages');
+            const div = document.createElement('div');
+            
+            if(sender === 'user') {
+                div.className = "bg-[#B6A58A]/35 text-[#F3EFE6] p-2.5 rounded-xl rounded-tr-none border border-[#B6A58A]/50 self-end max-w-[85%] text-right backdrop-blur-sm drop-shadow-sm";
+            } else {
+                div.className = "bg-[#303A32]/80 text-[#F3EFE6] p-2.5 rounded-xl rounded-tl-none border border-[#B6A58A]/30 self-start max-w-[85%] backdrop-blur-sm drop-shadow-sm";
+            }
+            div.innerText = text;
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function respondDandy(query) {
+            const q = query.toLowerCase();
+            let reply = "Puedes explorar más en nuestras secciones principales o visitar www.dfvco.com.";
+            
+            if(q.includes('quinta lina')) {
+                reply = "Puedes ver todos los detalles de la tranquilidad andina ingresando a Quinta Lina (presentacion.html).";
+            } else if(q.includes('marina bay')) {
+                reply = "En Marina Bay (marinabay.html) descubrirás hospedaje y descanso frente al mar.";
+            } else if(q.includes('servicio') || q.includes('kosmetria')) {
+                reply = "En la sección de Servicios (servicios.html) encuentras nuestra propuesta de belleza y bienestar.";
+            } else if(q.includes('evento')) {
+                reply = "Organiza tu evento o retiro corporativo ingresando a Eventos.";
+            } else if(q.includes('travel') || q.includes('viaje')) {
+                reply = "Planifica tu viaje por Ecuador y el mundo con MASQUEVUELOS en Travel (travel.html).";
+            } else if(q.includes('contacto')) {
+                reply = "Escríbenos directamente a través de nuestra página de Contacto (contactenos.html).";
+            }
+            
+            appendMessage(reply, 'bot');
+        }
+    </script>
+</body>
+</html>
