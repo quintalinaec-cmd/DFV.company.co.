@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "Audiowide-Regular";
+    src: url(Fuentes/Audiowide-Regular.ttf);
+    format('truetype');
+}
+@font-face {
+    font-family: "JockeyOne-Regular";
+    src: url(Fuentes/JockeyOne-Regular.ttf);
+    format('truetype');
+}
+
+#p1{
+    font-family: "Audiowide-Regular";
+    font-size: 100px;
+    color: rgba(7, 40, 187, 0.829);
+}

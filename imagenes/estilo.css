@@ -1,0 +1,79 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: url('fondo3.jpg') no-repeat center center/cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    flex-direction: column;
+  }
+  
+  /* Title Container */
+  .title-container {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+  }
+  
+  .title-container .logo {
+    max-width: 80px; /* Ajusta el tamaño del logo */
+    margin-right: 20px;
+  }
+  
+  .title-container .main-title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+  }
+  
+  /* Content Styles */
+  .content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 1.5rem;
+    border-radius: 8px;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .content .info-image {
+    max-width: 200px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .content .info-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.7);
+  }
+  
+  .parrafos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -90px;
+  }
+  .parrafos2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -55px;
+  }
