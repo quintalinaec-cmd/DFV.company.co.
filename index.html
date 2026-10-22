@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DFV Company & Co. | Vive Ecuador</title>
+    <title>DFVCO - DFV Company & Co. | Vive Ecuador (dfvco.com)</title>
+    <meta name="description" content="Sitio oficial de DFVCO (dfvco.com). Descubre Quinta Lina, Marina Bay, Kosmetria y experiencias exclusivas de hospitalidad, bienestar y turismo en Ecuador.">
+    <meta name="keywords" content="dfvco, dfvco.com, DFV Company, Quinta Lina, Marina Bay, Ecuador">
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- FontAwesome para Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -60,7 +64,7 @@
 
             <!-- MENÚ ESCRITORIO -->
             <ul class="hidden xl:flex items-center gap-5 text-[11px] font-medium tracking-widest uppercase text-[#F3EFE6]">
-                <li><a href="borrador.html" class="hover:text-[#B6A58A] transition-colors drop-shadow">Inicio</a></li>
+                <li><a href="index.html" class="hover:text-[#B6A58A] transition-colors drop-shadow">Inicio</a></li>
                 <li><a href="presentacion.html" class="hover:text-[#B6A58A] transition-colors drop-shadow">Quinta Lina</a></li>
                 <li><a href="marinabay.html" class="hover:text-[#B6A58A] transition-colors drop-shadow">Marina Bay</a></li>
                 <li><a href="servicios.html" class="hover:text-[#B6A58A] transition-colors drop-shadow">KOSMETRIA</a></li>
@@ -83,7 +87,7 @@
 
         <!-- DESPLEGABLE MÓVIL -->
         <div id="mobileMenu" class="hidden xl:hidden mt-3 pt-3 border-t border-[#B6A58A]/30 flex flex-col gap-2.5 text-xs tracking-wider uppercase text-[#F3EFE6]">
-            <a href="presentacion.html" class="hover:text-[#B6A58A] py-1">Inicio</a>
+            <a href="index.html" class="hover:text-[#B6A58A] py-1">Inicio</a>
             <a href="presentacion.html" class="hover:text-[#B6A58A] py-1">Quinta Lina</a>
             <a href="marinabay.html" class="hover:text-[#B6A58A] py-1">Marina Bay</a>
             <a href="servicios.html" class="hover:text-[#B6A58A] py-1">KOSMETRIA</a>
@@ -219,7 +223,7 @@
             </a>
 
             <!-- Tarjeta 4: Travel Ecuador -->
-            <a href="travel.html" class="glass-box p-5 rounded-xl block hover:bg-[#303A32]/60 transition-all duration-300 hover:scale-105 group text-center border-t-2 border-t-[#B6A58A]">
+            <a href="consultas.html" class="glass-box p-5 rounded-xl block hover:bg-[#303A32]/60 transition-all duration-300 hover:scale-105 group text-center border-t-2 border-t-[#B6A58A]">
                 <div class="w-10 h-10 mx-auto rounded-full bg-[#B6A58A]/30 border border-[#B6A58A]/50 flex items-center justify-center text-[#B6A58A] text-lg mb-3 group-hover:rotate-12 transition-transform">
                     <i class="fas fa-plane-departure"></i>
                 </div>
@@ -267,7 +271,7 @@
                 <a href="presentacion.html" class="bg-[#B6A58A]/25 hover:bg-[#B6A58A]/45 text-[#F3EFE6] px-2 py-1 rounded border border-[#B6A58A]/40 whitespace-nowrap">⛰️ Quinta Lina</a>
                 <a href="marinabay.html" class="bg-[#B6A58A]/25 hover:bg-[#B6A58A]/45 text-[#F3EFE6] px-2 py-1 rounded border border-[#B6A58A]/40 whitespace-nowrap">🌊 Marina Bay</a>
                 <a href="servicios.html" class="bg-[#B6A58A]/25 hover:bg-[#B6A58A]/45 text-[#F3EFE6] px-2 py-1 rounded border border-[#B6A58A]/40 whitespace-nowrap">✨ Kosmetria</a>
-                <a href="travel.html" class="bg-[#B6A58A]/25 hover:bg-[#B6A58A]/45 text-[#F3EFE6] px-2 py-1 rounded border border-[#B6A58A]/40 whitespace-nowrap">✈️ Travel</a>
+                <a href="consultas.html" class="bg-[#B6A58A]/25 hover:bg-[#B6A58A]/45 text-[#F3EFE6] px-2 py-1 rounded border border-[#B6A58A]/40 whitespace-nowrap">✈️ Travel</a>
             </div>
 
             <div class="p-2.5 bg-[#303A32]/90 backdrop-blur-md border-t border-[#B6A58A]/30 flex gap-2">
@@ -338,7 +342,7 @@
             } else if(q.includes('evento')) {
                 reply = "Organiza tu evento o retiro corporativo ingresando a Eventos.";
             } else if(q.includes('travel') || q.includes('viaje')) {
-                reply = "Planifica tu viaje por Ecuador y el mundo con MASQUEVUELOS en Travel (travel.html).";
+                reply = "Planifica tu viaje por Ecuador y el mundo con MASQUEVUELOS en Travel (consultas.html).";
             } else if(q.includes('contacto')) {
                 reply = "Escríbenos directamente a través de nuestra página de Contacto (contactenos.html).";
             }
