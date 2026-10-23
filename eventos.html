@@ -30,7 +30,6 @@
             overflow-x: hidden;
             line-height: 1.6;
         }
-
         /* === MENÚ: Solo Logo arriba a la izquierda === */
         .menu {
             display: flex;
@@ -67,7 +66,6 @@
             color: var(--lino);
         }
         #menu { display: none; }
-
         /* === HEADER COMPLETO === */
         .header {
             min-height: 85vh;
@@ -125,7 +123,6 @@
             max-width: 750px;
             margin: 0 auto 40px;
         }
-
         /* === BOTONES DE NAVEGACIÓN DEBAJO DEL TEXTO === */
         .botones-navegacion {
             display: flex;
@@ -153,7 +150,6 @@
             background-color: rgba(233, 225, 210, 0.25);
             border-color: rgba(233, 225, 210, 0.5);
         }
-
         /* === SECCIÓN: EVENTOS PRIVADOS === */
         .seccion-eventos-dinamica {
             position: relative;
@@ -289,7 +285,6 @@
             color: var(--lino);
             font-size: 1.1rem;
         }
-
         /* === SECCIÓN: RETIROS & BIENESTAR === */
         .seccion-retiros-vibrante {
             background: linear-gradient(rgba(82, 102, 75, 0.6), rgba(154, 118, 86, 0.5)),
@@ -343,7 +338,6 @@
             font-size: 0.95rem;
             line-height: 1.6;
         }
-
         /* === SECCIÓN: COTIZACIÓN === */
         .seccion-cotizacion-dinamica {
             background: linear-gradient(135deg, rgba(154,118,86,0.65) 0%, rgba(82,102,75,0.65) 100%),
@@ -415,7 +409,6 @@
             transform: translateY(-3px);
             box-shadow: 0 15px 35px rgba(154,118,86,0.5);
         }
-
         /* === BANNER FINAL === */
         .experiencia-personalizada-vibrante {
             background: linear-gradient(135deg, rgba(154, 118, 86, 0.65), rgba(82, 102, 75, 0.65)),
@@ -455,7 +448,6 @@
             background: #FFFFFF;
             color: var(--tierra);
         }
-
         /* === PIE DE PÁGINA === */
         .footer {
             background-color: var(--fondo-oscuro);
@@ -492,7 +484,6 @@
             border-top: 1px solid rgba(233,225,210,0.2);
             opacity: 0.7;
         }
-
         /* === RESPONSIVO === */
         @media (max-width: 768px) {
             .menu { padding: 20px 25px; }
@@ -519,13 +510,11 @@
             </a>
             <label for="menu" class="menu-toggle"><i class="fas fa-bars"></i></label>
         </div>
-
         <!-- Título, texto y botones debajo -->
         <div class="header-txt">
             <span>LUCES, NATURALEZA & CELEBRACIÓN</span>
             <h1>Eventos, Celebraciones & Retiros</h1>
             <p>Un entorno andino privado diseñado para celebrar la vida, compartir con quienes amas o facilitar experiencias profundas de conexión y bienestar.</p>
-
             <!-- Botones centrados debajo del texto -->
             <div class="botones-navegacion">
                 <a href="presentacion.html">Inicio</a>
@@ -533,7 +522,6 @@
             </div>
         </div>
     </header>
-
     <main>
         <!-- SECCIÓN: EVENTOS PRIVADOS -->
         <section class="seccion-eventos-dinamica">
@@ -584,7 +572,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="nota-cierre-manifiesto">
                 <div class="nota-icon"><i class="fas fa-sparkles"></i></div>
                 <div class="nota-content">
@@ -593,7 +580,6 @@
                 </div>
             </div>
         </section>
-
         <!-- SECCIÓN: RETIROS & BIENESTAR -->
         <section class="seccion-retiros-vibrante">
             <span class="section-tag">Línea Estratégica de Bienestar</span>
@@ -607,11 +593,7 @@
                     <h3>Yoga & Movimiento Consciente</h3>
                     <p>Espacios abiertos e interiores preparados para la práctica de asanas, respiración guiada y alineación energética.</p>
                 </div>
-                <div class="card-retiro-dinamica">
-                    <i class="fas fa-dharmachakra"></i>
-                    <h3>Sonido & Meditación Holística</h3>
-                    <p>Inmersiones vibracionales con Gong, sesiones de tarot terapéutico, limpia andina y círculos de sanación.</p>
-                </div>
+                <!-- Tarjeta eliminada: Sonido & Meditación Holística -->
                 <div class="card-retiro-dinamica">
                     <i class="fas fa-leaf"></i>
                     <h3>Conexión con la Vida de Campo</h3>
@@ -624,7 +606,6 @@
                 </div>
             </div>
         </section>
-
         <!-- SECCIÓN: COTIZACIÓN -->
         <section class="seccion-cotizacion-dinamica">
             <span class="section-tag">Escríbenos para organizar tu fecha</span>
@@ -662,7 +643,6 @@
                 </button>
             </form>
         </section>
-
         <!-- BANNER FINAL -->
         <section class="experiencia-personalizada-vibrante">
             <h2>Crea Recuerdos Auténticos en Quinta Lina</h2>
@@ -672,7 +652,6 @@
             </a>
         </section>
     </main>
-
     <!-- PIE DE PÁGINA -->
     <footer class="footer">
         <div class="footer-content">
@@ -694,7 +673,6 @@
         </div>
         <p class="copyright">© 2026 DFV — Todos los derechos reservados.</p>
     </footer>
-
     <!-- Script para enviar a WhatsApp -->
     <script>
         document.getElementById('formWhatsApp').addEventListener('submit', function(e) {
@@ -704,14 +682,12 @@
             const tipo = document.getElementById('tipo').options[document.getElementById('tipo').selectedIndex].text;
             const personas = document.getElementById('personas').value;
             const mensaje = document.getElementById('mensaje').value;
-
             const texto = `Hola 👋, me interesa organizar un evento en Quinta Lina.%0A%0A` +
                 `📋 Nombre: ${nombre}%0A` +
                 `📞 Teléfono: ${telefono}%0A` +
                 `✨ Tipo de evento: ${tipo}%0A` +
                 `👥 Personas: ${personas}%0A` +
                 `📝 Detalles: ${mensaje || 'No especificado'}`;
-
             window.open(`https://wa.me/593983842601?text=${texto}`, '_blank');
         });
     </script>
